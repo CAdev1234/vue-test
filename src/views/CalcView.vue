@@ -58,7 +58,7 @@ import {
     Button,
     LoadingSpinner
 } from '../components/ui/common/index'
-import { CountryType, PackageType, SummaryType } from '../models/type'
+import type { CountryType, PackageType, SummaryType } from '../models/type'
 import { COUNTRY_DATA, PACKAGE_DATA } from '../constant/index'
 import storage, { StorageType } from '../utils/storage'
 import { defineComponent, onMounted, reactive, ref, toRaw, toRefs, watch } from 'vue'
@@ -125,7 +125,7 @@ export default defineComponent({
             const data = toRaw(state)
             const isValid = validateForm()
             if (!isValid) {
-                window.alert("Please fill inputs")
+                window.alert("Please fill inputs or age couldn't be 0")
                 return
             }
             const summaryData:SummaryType = {

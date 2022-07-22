@@ -4,20 +4,14 @@
     </div>
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent } from "vue";
-
 export default defineComponent({
-    name: 'LoadingSpinner',
-    setup() {
-
-    }
+    name: 'LoadingSpinner'
 })
 </script>
 
 <style scoped>
-/* spinner */
-
 .lds-ripple {
     display: inline-block;
     position: relative;

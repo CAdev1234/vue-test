@@ -15,10 +15,9 @@
     </div>
 </template>
 
-<script>
-import { defineComponent } from "vue";
-import { Button } from "../components/ui/common/index";
-
+<script lang="ts">
+import { defineComponent } from "vue"
+import { Button } from "../components/ui/common/index"
 export default defineComponent({
     components: {
     Button

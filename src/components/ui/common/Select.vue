@@ -24,9 +24,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, PropType } from 'vue';
-import CaretDownIcon from '../../icons/CaretDownIcon.vue';
-import CaretUpIcon from '../../icons/CaretUpIcon.vue';
+import { defineComponent, ref } from 'vue'
+import type { PropType } from 'vue'
+import { CaretDownIcon, CaretUpIcon} from '../../icons/index'
 interface SelectOptionType {
     label: string,
     value: string

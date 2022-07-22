@@ -15,6 +15,3 @@
 import { RouterLink } from "vue-router";
 import Button from './ui/common/Button.vue';
 </script>
-
-<style scoped>
-</style>

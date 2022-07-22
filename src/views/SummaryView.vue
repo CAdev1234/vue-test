@@ -11,29 +11,34 @@
             <p>Premium: {{pkageData[pkageIdx].price}}{{pkageData[pkageIdx].currency}}</p>
             <span class="mt-5 flex items-center gap-x-2">
                 <RouterLink to="/calc">
-                    <Button variant="outline" size="small">Back</Button>
+                    <Button 
+                        variant="outline" 
+                        size="small"
+                    >Back</Button>
                 </RouterLink>
-                <Button size="small">Buy</Button>
+                <Button 
+                    size="small"
+                    @click="handleBuy"
+                >Buy</Button>
             </span>
         </div>
     </div>
 </template>
 
 <script lang="ts">
-import { onMounted, reactive, ref, toRefs } from "vue";
-import {
-    Button,
-    LoadingSpinner
-} from "../components/ui/common/index";
-import storage, { StorageType } from "../utils/storage";
+import { onMounted, reactive, ref, toRefs } from "vue"
+import { Button, LoadingSpinner } from "../components/ui/common/index"
+import storage, { StorageType } from "../utils/storage"
 import { Keys } from '../constant/index'
-import { CountryType, SummaryType } from "../models/type";
+import type { CountryType, SummaryType } from "../models/type"
+import { useRouter } from "vue-router"
 export default {
     components: {
-    Button,
-    LoadingSpinner
-},
+        Button,
+        LoadingSpinner
+    },
     setup() {
+        const router = useRouter()
         const state = reactive<SummaryType>({
             name: '',
             age: 0,
@@ -51,9 +56,14 @@ export default {
             state.pkageData = data.pkageData
             isLoading.value = false
         })
+        const handleBuy = () => {
+            storage.rcRemoveItem(StorageType.local, Keys.summaryStorageKey)
+            router.replace({path: '/'})
+        }
         return {
             isLoading,
-            ...toRefs(state)
+            ...toRefs(state),
+            handleBuy
         }
     }
 }

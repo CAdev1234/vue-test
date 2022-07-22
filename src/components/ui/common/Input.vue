@@ -1,7 +1,8 @@
 <template>
     <div class="flex flex-col gap-y-2">
-        <label>{{label}}</label>
-        <input 
+        <label for="custom-input">{{label}}</label>
+        <input
+            id="custom-input" 
             :type="type" 
             class="p-2 border border-gray-200" 
             :placeholder="placeholder"
@@ -13,10 +14,8 @@
 </template>
 
 <script lang="ts">
-import {
-    defineComponent,
-    PropType,
-} from 'vue';
+import { defineComponent } from 'vue'
+import type { PropType } from 'vue'
 type EditorType = 'text' | 'number' | 'email'
 export default defineComponent({
     name: 'Input',
@@ -54,5 +53,5 @@ export default defineComponent({
 })
 </script>
 
-<style>
+<style scoped>
 </style>

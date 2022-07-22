@@ -15,21 +15,22 @@
     </button>
 </template>
 
-<script setup lang="ts">
-import {
-    defineProps,
-    PropType,
-} from 'vue';
-type SizeType = 'normal' | 'small' | 'large';
-type VariantType = 'primary' | 'outline';
-defineProps({
-    size: {
-        type: String as PropType<SizeType>,
-        default: 'normal'
-    },
-    variant: {
-        type: String as PropType<VariantType>,
-        default: 'primary'
+<script lang="ts">
+import { defineComponent } from 'vue'
+import type { PropType } from 'vue'
+type SizeType = 'normal' | 'small' | 'large'
+type VariantType = 'primary' | 'outline'
+export default defineComponent({
+    name: 'Button',
+    props: {
+        size: {
+            type: String as PropType<SizeType>,
+            default: 'normal'
+        },
+        variant: {
+            type: String as PropType<VariantType>,
+            default: 'primary'
+        }
     }
 })
 </script>

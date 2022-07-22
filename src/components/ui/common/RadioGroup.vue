@@ -24,8 +24,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType, ref } from "vue";
-import { PackageType } from "../../../models/type";
+import { defineComponent, ref } from "vue"
+import type { PropType } from 'vue'
+import type { PackageType } from "../../../models/type"
 interface ItemGeneralType {
     label: string,
     value: string
@@ -68,5 +69,5 @@ export default defineComponent({
 })
 </script>
 
-<style>
+<style scoped>
 </style>
